@@ -13,23 +13,23 @@ function setDetails(imageUrl, titleText) {
 
 }
 
-function imageFromThumb(thumbnail) {
+function imageFromThumb(thumbnail) { // retrieve and return the value of the data-image-url attribute.
   "use strict";
   return thumbnail.getAttribute("data-image-url");
 }
 
 function titleFromThumb(thumbnail) {
   "use strict";
-  var title = thumbnail.getAttribute("data-image-title");
+  //var title = thumbnail.getAttribute("data-image-title");
   /* eslint-disable-next-line no-console */
-  console.log(title);
-  return title;
-  //return thumbnail.getAttribute('data-image-title');
+  //console.log(title);
+  //return title;
+  return thumbnail.getAttribute("data-image-title");
 }
 
 function setDetailsFromThumb(thumbnail) {
   "use strict";
-  setDetails(imageFromThumb(thumbnail, titleFromThumb(thumbnail)));
+  setDetails(imageFromThumb(thumbnail), titleFromThumb(thumbnail));
 }
 
 function addThumbClickHandler(thumb) {
