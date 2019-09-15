@@ -50,6 +50,13 @@ a {
 .detail-image-frame {
   position: relative;
   text-align: center;
+
+  transition: transform 333ms cubic-bezier(1, .06, .28,1);
+}
+
+.is-tiny {
+  transform: scale(0.001);
+  transition: transform 0ms;
 }
 
 .detail-image-title {
@@ -60,6 +67,19 @@ a {
   left: 4px;
   position: absolute;
   text-shadow: rgba(0, 0, 0, 0.9) -4px 8px 9px;
+}
+
+.hidden-detail .detail-image-container {
+  display: none;
+}
+
+.hidden-detail .thumbnail-list {
+  align-items: center;
+  flex-direction: column;
+}
+
+.hidden-detail .thumbnail-item {
+  max-width: 80%;
 }
 
 .logo-text {
@@ -86,6 +106,12 @@ a {
   display: inline-block;
   max-width: 120px;
   min-width: 120px;
+
+  transition: transform 133ms ease-in-out;
+}
+
+.thumbnail-item:hover {
+  transform: scale(1.2);
 }
 
 .thumbnail-image {
@@ -100,7 +126,7 @@ a {
   list-style: none;
   order: 2;
   overflow-x: auto;
-  padding: 0;
+  padding: 20px 0;
   white-space: nowrap;
 }
 
@@ -124,15 +150,20 @@ a {
     flex-direction: row;
     overflow: hidden;
   }
+
   .thumbnail-list {
     flex-direction: column;
     margin-left: 20px;
     order: 0;
+
+    padding: 0 35px;
   }
-  .thumnnail-item{
+
+  .thumnnail-item {
     max-width: 260px;
   }
-  .thumbnail-item + .thumbnail-item{
+
+  .thumbnail-item+.thumbnail-item {
     margin-top: 20px;
   }
 }
