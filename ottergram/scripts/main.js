@@ -5,6 +5,10 @@ var THUMBNAIL_LINK_SELECTOR = "[data-image-role=\"trigger\"]";
 var HIDDEN_DETAIL_CLASS = "hidden-detail";
 var TINY_EFFECT_CLASS = "is-tiny";
 var ESC_KEY = 27; // this is the ASCII value
+/*var LEFT_KEY = 37;
+var RIGHT_KEY = 39;
+var otterPics = ["img/otter1.jpg", "img/otter2.jpg", "img/otter3.jpg", "img/otter4.jpg", "img/otter5.jpg"];\
+*/
 
 function setDetails(imageUrl, titleText) {
   "use strict";
@@ -65,13 +69,11 @@ function showDetails() {
   setTimeout(function() {
     frame.classList.remove(TINY_EFFECT_CLASS);
   }, 50);
-
-
 }
 
 function addKeyPressHandler() {
   "use strict";
-  document.body.addEventListener("keyup", function (event){
+  document.body.addEventListener("keyup", function(event) {
     event.preventDefault();
     /* eslint-disable-next-line no-console */
     console.log(event.keyCode);
